@@ -115,3 +115,5 @@ TechxServe's.** The brand appears only in the nav and footer.
 ---
 
 TechxServe — *Tomorrow's Reality, Today.*
+
+> Auto-deploys: pushes to `main` deploy to production via Vercel’s Git integration.
