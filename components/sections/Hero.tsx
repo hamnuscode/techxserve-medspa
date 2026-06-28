@@ -19,7 +19,7 @@ export function Hero() {
     >
       <HeroBackground />
       <Container>
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+        <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
           {/* eyebrow — editorial label flanked by fading gold rules (no pill) */}
           <ScrollReveal>
             <div className="flex items-center justify-center gap-3 sm:gap-4">
@@ -31,18 +31,25 @@ export function Hero() {
             </div>
           </ScrollReveal>
 
-          {/* headline — two lines, closing emphasis highlighted with a gold underline */}
+          {/* headline — two lines: sage line 1, charcoal line 2 with a sage marker
+              on "Booked Treatments" and a gold underline on "3 Days" */}
           <ScrollReveal delay={0.05}>
-            <h1 className="mt-5 font-display text-[clamp(2rem,4.7vw,2.9rem)] font-semibold leading-[1.12] tracking-[-0.01em] text-sage-deep">
+            <h1 className="mt-5 font-display text-[clamp(1.9rem,4.4vw,2.85rem)] font-semibold leading-[1.12] tracking-[-0.01em] text-sage-deep">
               {hero.headline.line1}
               <br />
-              {hero.headline.line2}{' '}
-              <span className="relative whitespace-nowrap">
-                {hero.headline.highlight}
-                <span
-                  aria-hidden
-                  className="absolute -bottom-1 left-0 h-[0.14em] w-full rounded-full bg-champagne"
-                />
+              <span className="text-charcoal">
+                {hero.headline.line2.pre}{' '}
+                <mark className="rounded-[3px] bg-sage-soft/30 px-1.5 py-0.5 text-charcoal">
+                  {hero.headline.line2.mark}
+                </mark>{' '}
+                {hero.headline.line2.mid}{' '}
+                <span className="relative whitespace-nowrap">
+                  {hero.headline.line2.underline}
+                  <span
+                    aria-hidden
+                    className="absolute -bottom-1 left-0 h-[0.14em] w-full rounded-full bg-champagne"
+                  />
+                </span>
               </span>
             </h1>
           </ScrollReveal>
@@ -54,20 +61,20 @@ export function Hero() {
             </p>
           </ScrollReveal>
 
-          {/* CTA with leading arrow */}
+          {/* trust line — sits directly above the CTA */}
           <ScrollReveal delay={0.15}>
-            <div className="mt-6">
+            <p className="mt-7 text-xs uppercase tracking-[0.16em] text-charcoal/45">
+              {hero.trustLine}
+            </p>
+          </ScrollReveal>
+
+          {/* CTA with leading arrow */}
+          <ScrollReveal delay={0.18}>
+            <div className="mt-3">
               <Button source="hero" size="lg" arrowSide="left" className="px-8 py-3.5">
                 {hero.cta}
               </Button>
             </div>
-          </ScrollReveal>
-
-          {/* fine-print trust line */}
-          <ScrollReveal delay={0.2}>
-            <p className="mt-4 text-xs uppercase tracking-[0.16em] text-charcoal/45">
-              {hero.trustLine}
-            </p>
           </ScrollReveal>
         </div>
       </Container>

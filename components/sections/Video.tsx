@@ -14,7 +14,7 @@ import { video } from '@/config/content';
  */
 export function Video() {
   return (
-    <section className="relative z-10 -mt-6 pb-16 sm:-mt-8 lg:-mt-10 lg:pb-24">
+    <section className="relative z-10 -mt-6 pb-12 sm:-mt-8 lg:-mt-10 lg:pb-16">
       <Container className="flex flex-col items-center text-center">
         <ScrollReveal className="w-full">
           {video.src ? (

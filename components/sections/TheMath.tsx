@@ -12,7 +12,7 @@ import { math } from '@/config/content';
  */
 export function TheMath() {
   return (
-    <section className="bg-cream-deep py-16 lg:py-24">
+    <section className="bg-cream-deep py-12 lg:py-16">
       <Container className="max-w-5xl">
         <div className="mx-auto max-w-2xl text-center">
           <ScrollReveal>

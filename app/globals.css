@@ -114,8 +114,13 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
+  @keyframes breathe {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.85; }
+    50% { transform: translateX(-50%) scale(1.18); opacity: 1; }
+  }
   .animate-float-slow { animation: float-slow 9s ease-in-out infinite; }
   .animate-float-slower { animation: float-slower 11s ease-in-out infinite; }
+  .animate-breathe { animation: breathe 7s ease-in-out infinite; }
   .animate-drift-spin { animation: drift-spin 40s linear infinite; }
 
   /* Continuous marquee for the infinite testimonial loop. */

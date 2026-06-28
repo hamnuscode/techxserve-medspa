@@ -50,7 +50,7 @@ export const theme: NicheTheme = {
       '0 1px 2px rgba(46,42,38,0.04), 0 18px 40px rgba(94,107,82,0.08)',
 
     // ── Layout rhythm ────────────────────────────────────────────────────────
-    '--section-py': 'clamp(4rem, 10vw, 8rem)',
+    '--section-py': 'clamp(2.75rem, 6vw, 5rem)',
     '--container-max': '1200px',
     '--container-gutter': 'clamp(1.25rem, 5vw, 2.5rem)',
   },
