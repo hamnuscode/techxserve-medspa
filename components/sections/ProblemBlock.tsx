@@ -11,15 +11,30 @@ import { problem } from '@/config/content';
 
 export function ProblemBlock() {
   const [checked, setChecked] = useState<Set<number>>(new Set());
+  const [lastActive, setLastActive] = useState<number | null>(null);
 
-  const toggle = (i: number) =>
+  const toggle = (i: number) => {
     setChecked((prev) => {
       const next = new Set(prev);
-      if (next.has(i)) { next.delete(i); } else { next.add(i); }
+      if (next.has(i)) {
+        next.delete(i);
+        // If there are still checked items, surface the most recent other one
+        if (next.size > 0) {
+          const remaining = [...next];
+          setLastActive(remaining[remaining.length - 1] ?? null);
+        } else {
+          setLastActive(null);
+        }
+      } else {
+        next.add(i);
+        setLastActive(i);
+      }
       return next;
     });
+  };
 
   const count = checked.size;
+  const activePoint = lastActive !== null ? problem.points[lastActive] : null;
 
   return (
     <section className="bg-cream-deep py-section">
@@ -83,7 +98,7 @@ export function ProblemBlock() {
           })}
         </StaggerGroup>
 
-        {/* Reactive callout */}
+        {/* Per-item response callout */}
         <div
           aria-live="polite"
           className={[
@@ -93,17 +108,16 @@ export function ProblemBlock() {
               : 'max-h-0 border-transparent p-0 opacity-0',
           ].join(' ')}
         >
-          {count > 0 && (
+          {activePoint && (
             <>
-              <p className="font-display text-[1.05rem] font-semibold text-sage-deep">
-                {count === 1
-                  ? 'Even one of these is costing you patients every month.'
-                  : count <= 3
-                  ? `${count} of these are quietly costing you patients every month.`
-                  : `${count} of these? Your site is losing you real revenue, every single month.`}
+              <p className="text-[0.68rem] font-medium uppercase tracking-[0.16em] text-champagne">
+                {count > 1 ? `${count} issues selected` : '1 issue selected'}
               </p>
-              <p className="mt-2 text-sm text-charcoal/65">
-                A website built to convert fixes all of this. In about 3 days.
+              <p className="mt-2 font-display text-[1.05rem] font-semibold leading-snug text-sage-deep">
+                {activePoint.response.headline}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-charcoal/65">
+                {activePoint.response.body}
               </p>
               <div className="mt-5">
                 <Button source="problem_block" size="md">

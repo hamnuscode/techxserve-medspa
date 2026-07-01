@@ -93,26 +93,50 @@ export const problem = {
     {
       icon: 'clock' as IconKey,
       text: 'Your site looks dated next to the clinic down the street',
+      response: {
+        headline: 'A dated site signals an outdated practice.',
+        body: 'First impressions happen in under 3 seconds online. We rebuild your site to look as premium as the work you do inside.',
+      },
     },
     {
       icon: 'smartphone' as IconKey,
-      text: 'It’s slow or clumsy on a phone, where most of your bookings happen',
+      text: 'It\'s slow or clumsy on a phone, where most of your bookings happen',
+      response: {
+        headline: 'Over 70% of patients are on their phone.',
+        body: 'If your site is clumsy on mobile, they close the tab and book the clinic down the street. We build mobile-first, always.',
+      },
     },
     {
       icon: 'calendar' as IconKey,
-      text: 'There’s no easy way to book online, so people call… or don’t',
+      text: 'There\'s no easy way to book online, so people call... or don\'t',
+      response: {
+        headline: 'Every missed booking is revenue you never see.',
+        body: 'We put a fast, clear booking button exactly where patients look for it, and wire it to real-time availability.',
+      },
     },
     {
       icon: 'images' as IconKey,
       text: 'Your before/afters and reviews are buried instead of selling for you',
+      response: {
+        headline: 'Your results are your best salesperson.',
+        body: 'We design before/after galleries and review sections right into the page where they actually convert browsers into bookings.',
+      },
     },
     {
       icon: 'sparkles' as IconKey,
-      text: 'You’re proud of your work, but the website doesn’t reflect your brand',
+      text: 'You\'re proud of your work, but the website doesn\'t reflect your brand',
+      response: {
+        headline: 'Your in-room experience deserves a site that matches it.',
+        body: 'We design to your aesthetic, not a template. Custom colors, fonts, and layouts that feel like you.',
+      },
     },
     {
       icon: 'search' as IconKey,
-      text: 'New patients can’t find you, and the ones who do don’t convert',
+      text: 'New patients can\'t find you, and the ones who do don\'t convert',
+      response: {
+        headline: 'Visibility and conversion are two different problems.',
+        body: 'We fix both: SEO so the right patients find you, and a site designed to turn those visitors into booked treatments.',
+      },
     },
   ],
 };
